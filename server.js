@@ -5,6 +5,7 @@ const sassMiddleware = require("node-sass-middleware");
 var express = require('express');
 var exphbs = require('express-handlebars');
 var app = express();
+var config = require('./config')
 
 
 app.engine('handlebars', exphbs());
@@ -44,4 +45,4 @@ app.use(
 
 
 app.use(express.static("public"));
-app.listen(3000);
+app.listen(config.server.port, config.server.host);
