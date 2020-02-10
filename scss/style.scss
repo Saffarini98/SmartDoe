@@ -8,13 +8,15 @@ $red-color: #eb6762;
 #navbar {
   display: flex;
   text-align: center;
-  padding: 19px 16px;
+  padding: 19px 45px;
   text-decoration: none;
   font-size: 16px;
   background-color: white;
 
   .logo img {
-    height: 25px;
+    height: 28px;
+    padding-right: 30px;
+    padding-left: 10px;
   }
 }
 
@@ -23,7 +25,7 @@ $red-color: #eb6762;
   color: black;
   margin-top: 20px;
   font-family: "Staatliches", cursive;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .middlenav a:hover {
@@ -121,15 +123,15 @@ $red-color: #eb6762;
   }
 }
 
-.dot-nav--item.scrolled {
-  // background-color: black !important;
-  border: 3px solid black;
-  transition: border 1000ms linear;
-}
+// .dot-nav--item.scrolled {
+//   // background-color: black !important;
+//   border: 3px solid black;
+//   transition: border 1000ms linear;
+// }
 
-.dot-nav--link.scrolled {
-  background-color: black;
-}
+// .dot-nav--link.scrolled {
+//   background-color: black;
+// }
 
 .side-nav-sticky {
   position: fixed;

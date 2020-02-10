@@ -1,1 +1,73 @@
-<h1>Hello</h1>
+<h1>1</h1>
+
+<h1>Hi! This page is cread dynamcially using Vanilla JS</h1>
+
+<ul class="products">
+</ul>
+
+<script>
+
+  var makeElement = (tagName, className, text) => {
+    var element = document.createElement(tagName);
+    element.classList.add(className);
+    if (text) {
+      element.textContent = text;
+    }
+    return element;
+  };
+
+  createCards = (product) => {
+    var listItems = [];
+    for (var i = 0; i < product.length; i++) {
+      var listItem = makeElement('li', 'product');
+
+      var title = makeElement('h3', 'product__title', product[i].text);
+      listItem.appendChild(title);
+
+      var picture = makeElement('img', 'product__image');
+      picture.src = product[i].imgUrl;
+      picture.alt = product[i].text;
+      listItem.appendChild(picture);
+
+      var price = makeElement('p', 'product__price', product[i].price);
+      listItem.appendChild(price);
+      listItems.push(listItem);
+    }
+    return listItems;
+  };
+
+  var cardList = document.querySelector('.products');
+
+  var productOne = {
+    isAvailable: true,
+    imgUrl: 'device/item-1.jpg',
+    text: 'Samsung',
+    price: 100,
+    isSpecial: true,
+    specialPrice: 300
+  };
+  var productTwo = {
+    isAvailable: true,
+    imgUrl: 'device/item-1.jpg',
+    text: 'Apple',
+    price: 500,
+    isSpecial: false,
+    specialPrice: 300
+  };
+  var productThree = {
+    isAvailable: true,
+    imgUrl: 'device/item-1.jpg',
+    text: 'Huawei',
+    price: 500,
+    isSpecial: false,
+    specialPrice: 300
+  };
+
+  var productList = [productOne, productTwo, productThree];
+  var cardItem = createCards(productList);
+  for (var i = 0; i < cardItem.length; i++) {
+    cardList.appendChild(cardItem[i]);
+  }
+
+
+</script>
